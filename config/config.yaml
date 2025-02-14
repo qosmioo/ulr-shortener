@@ -3,7 +3,7 @@ server:
   grpc_port: "8001"
 
 database:
-  type: "postgres"
+  type: "redis"
   postgres:
     user: "postgres"
     password: "postgres"

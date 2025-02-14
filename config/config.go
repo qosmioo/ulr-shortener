@@ -66,5 +66,9 @@ func LoadConfig() (*Config, error) {
 		cfg.Database.Postgres.DBName = dbName
 	}
 
+	if storageType := os.Getenv("STORAGE_TYPE"); storageType != "" {
+		cfg.Database.Type = storageType
+	}
+
 	return &cfg, nil
 }
