@@ -30,11 +30,9 @@ func ValidateURL(originalURL string) error {
 	if err != nil {
 		return ErrInvalidURLFormat
 	}
-	// Проверяем, чтобы схема была http или https
 	if parsedURL.Scheme != "http" && parsedURL.Scheme != "https" {
 		return ErrInvalidURLScheme
 	}
-	// Проверяем, что имя хоста соответствует формату домена
 	host := parsedURL.Hostname()
 	if !validHostPattern.MatchString(host) {
 		return ErrInvalidURLHost
