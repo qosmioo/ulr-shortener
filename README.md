@@ -43,3 +43,21 @@ Url Shortener
 ├── go.mod
 ├── go.sum
 ```
+
+## Запуск приложения
+
+### Запуск 
+```bash
+make run
+```
+### Остановка
+```bash
+make down
+```
+#### Важно: по умолчанию используется Redis, для использования PostgreSQL необходимо переопределить переменную type в config.yaml на postgres
+
+## Запуск тестов    
+
+```bash
+make test
+```
