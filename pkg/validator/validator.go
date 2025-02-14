@@ -30,9 +30,7 @@ func ValidateURL(originalURL string) error {
 	if err != nil {
 		return ErrInvalidURLFormat
 	}
-	if parsedURL.Scheme != "http" && parsedURL.Scheme != "https" {
-		return ErrInvalidURLScheme
-	}
+
 	host := parsedURL.Hostname()
 	if !validHostPattern.MatchString(host) {
 		return ErrInvalidURLHost
