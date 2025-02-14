@@ -54,6 +54,8 @@ func initStorage(cfg *config.Config, logger *zap.Logger) storage.Storage {
 	var store storage.Storage
 	var err error
 
+	logger.Info("Initializing storage", zap.String("type", cfg.Database.Type))
+
 	switch cfg.Database.Type {
 	case "postgres":
 		store, err = storage.NewPostgresStorage(cfg.Database.Postgres, logger)
